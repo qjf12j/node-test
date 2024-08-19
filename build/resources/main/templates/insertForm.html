@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>성적입력</title>
+
+
+</head>
+<body>
+    <h1>[ 성적 입력 ]</h1>
+
+    <form th:action="@{/insert}" method="post">
+        <table>
+            <tr>
+                <th>학번</th>
+                <td><input type="text" name="sid" required></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <th>국어점수</th>
+                <td><input type="number" name="kor" value="0"></td>
+            </tr>
+            <tr>
+                <th>영어점수</th>
+                <td><input type="number" name="eng" value="0"></td>
+            </tr>
+            <tr>
+                <th>수학점수</th>
+                <td><input type="number" name="mat" value="0"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">저장</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

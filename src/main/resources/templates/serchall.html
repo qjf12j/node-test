@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table, th, td {
+	border: 1px solid black;
+	margin: 5px;
+	padding: 5px;
+	text-align: center;
+}
+
+th, td {
+	width: 100px;
+}
+
+th {
+	background-color: lightgray;
+}
+</style>
+</head>
+<body>
+
+	<h1>[전체 학생 조회]</h1>
+	<table>
+		<tr>
+			<td>번호</td>
+			<td>학번</td>
+			<td>이름</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+			<td>총점</td>
+			<td></td>
+			<td></td>
+		</tr>
+
+	<tr th:each="s, i : ${dtolist}">
+		<td th:text="${i.index+1}"></td>
+		<td th:text="${s.sid}"></td>
+		<td th:text="${s.name}"></td>
+		<td th:text="${s.kor}"></td>
+		<td th:text="${s.eng}"></td>
+		<td th:text="${s.mat}"></td>
+		<td th:text="${s.kor+s.eng+s.mat}"></td>
+		<td><a th:href="@{/delete(sid=${s.sid})}">삭제</a></td>
+		<td><a th:href="@{'/update?sid=' + ${s.sid}}">수정</a></td>
+		</tr>
+
+	</table>
+
+
+
+
+</body>
+</html>

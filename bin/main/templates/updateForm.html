@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>save.html</title>
+</head>
+<body>
+	<h1>[ 수정 ]</h1>
+	<form action="update" method="post">
+			<input type="hidden" name="sid"th:value="${dto.sid}"> <br>
+		국어:<input type="text" name="kor"required="required"><br>
+		영어:<input type="text" name="eng"required="required"><br>
+		수학:<input type="text" name="mat"required="required"><br>
+		<input type="submit" value="저장">
+	</form>
+</body>
+</html>
